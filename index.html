@@ -3,239 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhijeet Prasad | Resume</title>
+    <title>Abhijeet Prasad | Professional Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-orange: #E67E22;
-            --dark-blue: #1A2A40;
-            --text-gray: #333;
-            --border-color: #E67E22;
+            --primary-color: #002d5b; /* Deep Navy */
+            --accent-color: #e67e22;  /* Professional Orange accent */
+            --bg-color: #ffffff;
+            --sidebar-bg: #f8f9fa;
+            --text-main: #2d3436;
+            --text-light: #636e72;
+            --border-light: #dfe6e9;
         }
 
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         body {
-            font-family: 'Georgia', serif;
-            line-height: 1.5;
-            color: var(--text-gray);
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .resume-container {
-            max-width: 850px;
-            margin: 0 auto;
-            background: white;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #e9ecef;
+            color: var(--text-main);
             display: flex;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
+            justify-content: center;
+            padding: 40px 20px;
         }
 
-        /* The Orange Top Bar Decor */
-        .top-accent {
-            position: absolute;
-            top: 0;
-            left: 0;
+        /* Main Resume Container */
+        .resume-wrapper {
             width: 100%;
-            height: 15px;
-            background-color: var(--primary-orange);
+            max-width: 1000px;
+            background: var(--bg-color);
+            display: flex;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        /* The Dark Blue Sidebar Decor */
-        .sidebar-line {
-            width: 35px;
-            background-color: var(--dark-blue);
-            flex-shrink: 0;
+        /* LEFT SIDEBAR */
+        aside {
+            flex: 1;
+            max-width: 320px;
+            background-color: var(--sidebar-bg);
+            padding: 40px 30px;
+            border-right: 1px solid var(--border-light);
         }
 
-        .main-content {
-            padding: 40px;
-            flex-grow: 1;
-        }
-
-        /* Header Section */
-        header {
+        .monogram-box {
+            border: 2px solid var(--primary-color);
+            padding: 30px;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            position: relative;
         }
 
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid #ccc;
+        .monogram-box h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 64px;
+            letter-spacing: 5px;
+            color: var(--primary-color);
+        }
+
+        .contact-section, .edu-section {
+            margin-bottom: 35px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .icon-box {
+            width: 30px;
+            height: 30px;
+            background: var(--accent-color);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 12px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .sidebar-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .edu-item {
+            margin-bottom: 20px;
+        }
+
+        .edu-item h4 { font-size: 14px; color: var(--primary-color); }
+        .edu-item p { font-size: 13px; color: var(--text-light); }
+
+        /* RIGHT CONTENT */
+        main {
+            flex: 2;
+            padding: 0;
+        }
+
+        .name-header {
+            background-color: var(--accent-color);
+            padding: 40px;
+            color: white;
+        }
+
+        .name-header h1 {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-size: 36px;
+            letter-spacing: 3px;
+        }
+
+        .content-padding {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 35px;
+        }
+
+        .section-header {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            text-transform: uppercase;
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 5px;
             margin-bottom: 15px;
         }
 
-        h1 {
-            color: var(--primary-orange);
-            font-size: 32px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin: 0 0 15px 0;
-        }
-
-        .contact-bar {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            font-size: 13px;
-            flex-wrap: wrap;
-            font-family: Arial, sans-serif;
-        }
-
-        .contact-item { display: flex; align-items: center; gap: 5px; }
-
-        /* Section Layout */
-        section {
-            display: flex;
-            margin-top: 25px;
-            border-top: 2px solid var(--border-color);
-            padding-top: 10px;
-        }
-
-        .section-label {
-            flex: 0 0 160px;
-            font-weight: bold;
+        .summary-text {
             font-size: 14px;
-            text-transform: uppercase;
+            line-height: 1.8;
+            color: var(--text-main);
         }
-
-        .section-body {
-            flex: 1;
-            font-size: 14px;
-        }
-
-        /* Specific Styles */
-        .job-title-row {
-            display: flex;
-            justify-content: space-between;
-            font-weight: bold;
-        }
-
-        .company-name { font-style: italic; margin-bottom: 8px; }
-
-        ul { padding-left: 18px; margin: 5px 0; }
-        li { margin-bottom: 5px; }
 
         .skills-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 5px;
+            gap: 10px;
         }
 
-        .language-container {
-            display: flex;
-            gap: 40px;
+        .skill-item { font-size: 14px; display: flex; align-items: center; }
+        .skill-item::before { content: "•"; color: var(--accent-color); margin-right: 8px; font-weight: bold; }
+
+        .job-title { font-weight: 700; font-size: 15px; color: var(--primary-color); }
+        .job-meta { font-style: italic; font-size: 13px; color: var(--text-light); margin-bottom: 10px; }
+
+        ul.exp-list { padding-left: 15px; font-size: 14px; }
+        ul.exp-list li { margin-bottom: 8px; }
+
+        /* Language Bars */
+        .lang-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
         }
 
-        .lang-item { margin-bottom: 10px; }
-        .dots { color: var(--primary-orange); font-size: 18px; letter-spacing: 2px; }
-        .dots-off { color: #ddd; }
+        .lang-label { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 5px; }
+        .progress-bg { background: #eee; height: 8px; border-radius: 4px; overflow: hidden; }
+        .progress-fill { background: var(--primary-color); height: 100%; border-radius: 4px; }
 
-        @media (max-width: 600px) {
-            section { flex-direction: column; }
-            .section-label { margin-bottom: 5px; }
-            .sidebar-line { display: none; }
+        @media (max-width: 768px) {
+            .resume-wrapper { flex-direction: column; }
+            aside { max-width: 100%; }
         }
     </style>
 </head>
 <body>
 
-<div class="resume-container">
-    <div class="top-accent"></div>
-    <div class="sidebar-line"></div>
-    
-    <div class="main-content">
-        <header>
-            <img src="profile.jpg" alt="Abhijeet Prasad" class="profile-img">
-            <h1>Abhijeet Prasad</h1>
-            <div class="contact-bar">
-                <div class="contact-item">📍 New Delhi 110091</div>
-                <div class="contact-item">📞 7683066320</div>
-                <div class="contact-item">✉️ Prasadabhijeet2125@gmail.com</div>
+<div class="resume-wrapper">
+    <aside>
+        <div class="monogram-box">
+            <h2>AP</h2>
+        </div>
+
+        <div class="contact-section">
+            <div class="contact-item">
+                <div class="icon-box">📍</div> New Delhi 110091
             </div>
+            <div class="contact-item">
+                <div class="icon-box">📞</div> 7683066320
+            </div>
+            <div class="contact-item">
+                <div class="icon-box">✉️</div> Prasadabhijeet2125@gmail.com
+            </div>
+        </div>
+
+        <div class="edu-section">
+            <h3 class="sidebar-title">Education</h3>
+            <div class="edu-item">
+                <h4>BBA</h4>
+                <p>Indian Institute of Management Bangalore</p>
+                <p>Expected: Sept 2025</p>
+            </div>
+            <div class="edu-item">
+                <h4>High School Diploma</h4>
+                <p>R.S.B.V. Kalyanpuri, Delhi</p>
+                <p>May 2024</p>
+            </div>
+        </div>
+    </aside>
+
+    <main>
+        <header class="name-header">
+            <h1>Abhijeet Prasad</h1>
         </header>
 
-        <section>
-            <div class="section-label">Summary</div>
-            <div class="section-body">
-                Customer communication associate specializing in high-net-worth engagement and premium promotion management. Demonstrated success in delivering compelling sales presentations and driving brand excellence. Consistently achieves strategic sales objectives through effective relationship building and targeted marketing strategies.
-            </div>
-        </section>
+        <div class="content-padding">
+            <section>
+                <h3 class="section-header">Summary</h3>
+                <p class="summary-text">
+                    Customer communication associate specializing in high-net-worth engagement and premium promotion management. Demonstrated success in delivering compelling sales presentations and driving brand excellence. Consistently achieves strategic sales objectives through effective relationship building and targeted marketing strategies.
+                </p>
+            </section>
 
-        <section>
-            <div class="section-label">Skills</div>
-            <div class="section-body">
+            <section>
+                <h3 class="section-header">Skills</h3>
                 <div class="skills-grid">
-                    <div>• Customer communication</div>
-                    <div>• Brand representation</div>
-                    <div>• Sales presentations</div>
-                    <div>• Event planning</div>
+                    <div class="skill-item">Customer communication</div>
+                    <div class="skill-item">Brand representation</div>
+                    <div class="skill-item">Sales presentations</div>
+                    <div class="skill-item">Event planning</div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section>
-            <div class="section-label">Experience</div>
-            <div class="section-body">
-                <div class="job-title-row">
-                    <span>CUSTOMER COMMUNICATION ASSOCIATE</span>
-                    <span>09/2024 - Current</span>
+            <section>
+                <h3 class="section-header">Experience</h3>
+                <div class="job-item">
+                    <p class="job-title">CUSTOMER COMMUNICATION ASSOCIATE</p>
+                    <p class="job-meta">Club Resorto Hospitality Limited | Delhi | Sept 2024 - Current</p>
+                    <ul class="exp-list">
+                        <li>Acted as the first point of contact for the brand, facilitating customer interactions reflecting a premium image.</li>
+                        <li><strong>Membership Sales:</strong> Delivered high-impact pitches for luxury club memberships, consistently hitting targets.</li>
+                        <li>Managed distribution of premium vacation passes, achieving 30-40% attendance for sales presentations.</li>
+                        <li>Led acquisition efforts, engaging high-net-worth individuals for exclusive 5-star venue events.</li>
+                    </ul>
                 </div>
-                <div class="company-name">Club Resorto Hospitality Limited, Delhi</div>
-                <ul>
-                    <li>Acted as the first point of contact for the brand, facilitating customer interactions that reflected a premium hospitality image.</li>
-                    <li><strong>Membership Sales:</strong> Deliver high-impact pitches for luxury club memberships, consistently achieving monthly sales targets.</li>
-                    <li>Managed distribution of premium vacation passes, achieving 30-40% attendance rate for sales presentations.</li>
-                    <li>Led acquisition efforts, engaging high-net-worth individuals for exclusive 5-star venue presentations.</li>
-                </ul>
-            </div>
-        </section>
+            </section>
 
-        <section>
-            <div class="section-label">Education and Training</div>
-            <div class="section-body">
-                <div class="job-title-row">
-                    <span>Indian Institute of Management Bangalore</span>
-                    <span>Bangalore, 09/2025</span>
-                </div>
-                <div>BBA</div>
-                <div style="border-top: 1px dashed #ccc; margin: 15px 0;"></div>
-                <div class="job-title-row">
-                    <span>R.S.B.V. Kalyanpuri</span>
-                    <span>Delhi, 05/2024</span>
-                </div>
-                <div>High School Diploma</div>
-            </div>
-        </section>
-
-        <section>
-            <div class="section-label">Languages</div>
-            <div class="section-body">
-                <div class="language-container">
-                    <div class="lang-item">
-                        <strong>Hindi</strong><br>
-                        <span class="dots">●●●●●</span><span class="dots-off">○</span><br>
-                        Advanced (C1)
+            <section>
+                <h3 class="section-header">Languages</h3>
+                <div class="lang-container">
+                    <div class="lang-box">
+                        <div class="lang-label"><span>Hindi (C1)</span><span>90%</span></div>
+                        <div class="progress-bg"><div class="progress-fill" style="width: 90%;"></div></div>
                     </div>
-                    <div class="lang-item">
-                        <strong>English</strong><br>
-                        <span class="dots">●●●●</span><span class="dots-off">●○</span><br>
-                        Upper Intermediate (B2)
+                    <div class="lang-box">
+                        <div class="lang-label"><span>English (B2)</span><span>75%</span></div>
+                        <div class="progress-bg"><div class="progress-fill" style="width: 75%;"></div></div>
+                    </div>
+                    <div class="lang-box" style="margin-top: 15px;">
+                        <div class="lang-label"><span>Spanish (B1)</span><span>50%</span></div>
+                        <div class="progress-bg"><div class="progress-fill" style="width: 50%;"></div></div>
                     </div>
                 </div>
-                <div class="lang-item">
-                    <strong>Spanish</strong><br>
-                    <span class="dots">●●</span><span class="dots-off">●●●○</span><br>
-                    Intermediate (B1)
-                </div>
-            </div>
-        </section>
-    </div>
+            </section>
+        </div>
+    </main>
 </div>
 
 </body>
