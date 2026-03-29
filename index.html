@@ -1,111 +1,281 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Abhijeet Prasad Resume</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhijeet Prasad | Professional Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #002d5b; /* Deep Navy */
+            --accent-color: #e67e22;  /* Professional Orange accent */
+            --bg-color: #ffffff;
+            --sidebar-bg: #f8f9fa;
+            --text-main: #2d3436;
+            --text-light: #636e72;
+            --border-light: #dfe6e9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #e9ecef;
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        /* Main Resume Container */
+        .resume-wrapper {
+            width: 100%;
+            max-width: 1000px;
+            background: var(--bg-color);
+            display: flex;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* LEFT SIDEBAR */
+        aside {
+            flex: 1;
+            max-width: 320px;
+            background-color: var(--sidebar-bg);
+            padding: 40px 30px;
+            border-right: 1px solid var(--border-light);
+        }
+
+        /* Profile Image Styling */
+     .profile-image-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 35px;
+        }
+
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%; /* This makes it a perfect circle */
+            border: 4px solid var(--primary-color); /* Navy blue border */
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            object-fit: cover;
+            object-position: top; /* Ensures your face stays in frame */
+        }
+
+        .contact-section, .edu-section {
+            margin-bottom: 35px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .icon-box {
+            width: 30px;
+            height: 30px;
+            background: var(--accent-color);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 12px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .sidebar-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .edu-item {
+            margin-bottom: 20px;
+        }
+
+        .edu-item h4 { font-size: 14px; color: var(--primary-color); }
+        .edu-item p { font-size: 13px; color: var(--text-light); }
+
+        /* RIGHT CONTENT */
+        main {
+            flex: 2;
+            padding: 0;
+        }
+
+        .name-header {
+            background-color: var(--accent-color);
+            padding: 40px;
+            color: white;
+        }
+
+        .name-header h1 {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-size: 36px;
+            letter-spacing: 3px;
+        }
+
+        .content-padding {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 35px;
+        }
+
+        .section-header {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            text-transform: uppercase;
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .summary-text {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--text-main);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .skill-item { font-size: 14px; display: flex; align-items: center; }
+        .skill-item::before { content: "•"; color: var(--accent-color); margin-right: 8px; font-weight: bold; }
+
+        .job-title { font-weight: 700; font-size: 15px; color: var(--primary-color); }
+        .job-meta { font-style: italic; font-size: 13px; color: var(--text-light); margin-bottom: 10px; }
+
+        ul.exp-list { padding-left: 15px; font-size: 14px; }
+        ul.exp-list li { margin-bottom: 8px; }
+
+        /* Language Bars */
+        .lang-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .lang-label { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 5px; }
+        .progress-bg { background: #eee; height: 8px; border-radius: 4px; overflow: hidden; }
+        .progress-fill { background: var(--primary-color); height: 100%; border-radius: 4px; }
+
+        @media (max-width: 768px) {
+            .resume-wrapper { flex-direction: column; }
+            aside { max-width: 100%; }
+        }
+    </style>
 </head>
-<body bgcolor="#f0f0f0">
+<body>
 
-    <table width="800" align="center" bgcolor="#ffffff" cellpadding="30" cellspacing="0" border="0">
-        <tr>
-            <td>
-                
-                <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                    <tr>
-                        <td align="center">
-                            <font face="Verdana" size="6" color="#e67e22"><b>ABHIJEET PRASAD</b></font><br>
-                            <font face="Verdana" size="2" color="#333333">
-                                New Delhi 110091 &nbsp; | &nbsp; 7683066320 &nbsp; | &nbsp; Prasadabhijeet2125@gmail.com
-                            </font>
-                        </td>
-                    </tr>
-                </table>
+<div class="resume-wrapper">
+    <aside>
+        <div class="profile-image-container">
+            <img src="IMG-20250925-WA0010(1).jpg" alt="Abhijeet Prasad" class="profile-pic">
+        </div>
 
-                <hr color="#002d5b" size="5">
-                <br>
+        <div class="contact-section">
+            <div class="contact-item">
+                <div class="icon-box">📍</div> New Delhi 110091
+            </div>
+            <div class="contact-item">
+                <div class="icon-box">📞</div> 7683066320
+            </div>
+            <div class="contact-item">
+                <div class="icon-box">✉️</div> Prasadabhijeet2125@gmail.com
+            </div>
+        </div>
 
-                <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                    <tr valign="top">
-                        
-                        <td width="200" bgcolor="#f9f9f9">
-                            <table width="100%" cellpadding="15" cellspacing="0" border="0">
-                                <tr>
-                                    <td>
-                                        <font face="Verdana" size="3" color="#002d5b"><b>EDUCATION</b></font>
-                                        <hr align="left" width="50" color="#e67e22">
-                                        <font face="Verdana" size="2">
-                                            <b>BBA</b><br>
-                                            IIM Bangalore<br>
-                                            <i>Expected Sept 2025</i>
-                                            <br><br>
-                                            <b>High School</b><br>
-                                            R.S.B.V. Kalyanpuri<br>
-                                            <i>May 2024</i>
-                                        </font>
+        <div class="edu-section">
+            <h3 class="sidebar-title">Education</h3>
+            <div class="edu-item">
+                <h4>BBA</h4>
+                <p>Indian Institute of Management Bangalore</p>
+                <p>Expected: Sept 2025</p>
+            </div>
+            <div class="edu-item">
+                <h4>High School Diploma</h4>
+                <p>R.S.B.V. Kalyanpuri, Delhi</p>
+                <p>May 2024</p>
+            </div>
+        </div>
+    </aside>
 
-                                        <br><br>
+    <main>
+        <header class="name-header">
+            <h1>Abhijeet Prasad</h1>
+        </header>
 
-                                        <font face="Verdana" size="3" color="#002d5b"><b>LANGUAGES</b></font>
-                                        <hr align="left" width="50" color="#e67e22">
-                                        <font face="Verdana" size="2">
-                                            Hindi (C1)<br>
-                                            English (B2)<br>
-                                            Spanish (B1)
-                                        </font>
+        <div class="content-padding">
+            <section>
+                <h3 class="section-header">Summary</h3>
+                <p class="summary-text">
+                    Customer communication associate specializing in high-net-worth engagement and premium promotion management. Demonstrated success in delivering compelling sales presentations and driving brand excellence. Consistently achieves strategic sales objectives through effective relationship building and targeted marketing strategies.
+                </p>
+            </section>
 
-                                        <br><br>
+            <section>
+                <h3 class="section-header">Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">Customer communication</div>
+                    <div class="skill-item">Brand representation</div>
+                    <div class="skill-item">Sales presentations</div>
+                    <div class="skill-item">Event planning</div>
+                </div>
+            </section>
 
-                                        <font face="Verdana" size="3" color="#002d5b"><b>SKILLS</b></font>
-                                        <hr align="left" width="50" color="#e67e22">
-                                        <font face="Verdana" size="2">
-                                            &bull; Communication<br>
-                                            &bull; Brand Rep<br>
-                                            &bull; Sales Pitches<br>
-                                            &bull; Event Planning
-                                        </font>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
+            <section>
+                <h3 class="section-header">Experience</h3>
+                <div class="job-item">
+                    <p class="job-title">CUSTOMER COMMUNICATION ASSOCIATE</p>
+                    <p class="job-meta">Club Resorto Hospitality Limited | Delhi | Sept 2024 - Current</p>
+                    <ul class="exp-list">
+                        <li>Acted as the first point of contact for the brand, facilitating customer interactions reflecting a premium image.</li>
+                        <li><strong>Membership Sales:</strong> Delivered high-impact pitches for luxury club memberships, consistently hitting targets.</li>
+                        <li>Managed distribution of premium vacation passes, achieving 30-40% attendance for sales presentations.</li>
+                        <li>Led acquisition efforts, engaging high-net-worth individuals for exclusive 5-star venue events.</li>
+                    </ul>
+                </div>
+            </section>
 
-                        <td width="30"></td>
-
-                        <td>
-                            <font face="Verdana" size="3" color="#002d5b"><b>PROFESSIONAL SUMMARY</b></font>
-                            <hr align="left" width="100%" color="#eeeeee">
-                            <font face="Verdana" size="2" color="#444444">
-                                Customer communication associate specializing in high-net-worth engagement and premium promotion management. Demonstrated success in delivering compelling sales presentations and driving brand excellence. 
-                            </font>
-
-                            <br><br>
-
-                            <font face="Verdana" size="3" color="#002d5b"><b>EXPERIENCE</b></font>
-                            <hr align="left" width="100%" color="#eeeeee">
-                            
-                            <font face="Verdana" size="2">
-                                <b>Customer Communication Associate</b><br>
-                                <i>Club Resorto Hospitality Limited | Sept 2024 - Present</i>
-                                <ul>
-                                    <li>Acted as primary brand contact for premium hospitality interactions.</li>
-                                    <li>Delivered high-impact pitches for luxury memberships, achieving targets.</li>
-                                    <li>Managed vacation pass distribution with 30-40% attendance success.</li>
-                                    <li>Engaged high-net-worth individuals at exclusive 5-star venues.</li>
-                                </ul>
-                            </font>
-                        </td>
-                    </tr>
-                </table>
-
-            </td>
-        </tr>
-    </table>
-
-    <table width="800" align="center" cellpadding="10">
-        <tr>
-            <td align="center">
-                <font face="Verdana" size="1" color="#999999">Hosted on GitHub Pages</font>
-            </td>
-        </tr>
-    </table>
+            <section>
+                <h3 class="section-header">Languages</h3>
+                <div class="lang-container">
+                    <div class="lang-box">
+                        <div class="lang-label"><span>Hindi (C1)</span><span>90%</span></div>
+                        <div class="progress-bg"><div class="progress-fill" style="width: 90%;"></div></div>
+                    </div>
+                    <div class="lang-box">
+                        <div class="lang-label"><span>English (B2)</span><span>75%</span></div>
+                        <div class="progress-bg"><div class="progress-fill" style="width: 75%;"></div></div>
+                    </div>
+                    <div class="lang-box" style="margin-top: 15px;">
+                        <div class="lang-label"><span>Spanish (B1)</span><span>50%</span></div>
+                        <div class="progress-bg"><div class="progress-fill" style="width: 50%;"></div></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
 
 </body>
 </html>
